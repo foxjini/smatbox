@@ -1,3 +1,4 @@
+// 2025.08.16 : 카메라 기능 구현
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import dayjs from 'dayjs';
