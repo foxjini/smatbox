@@ -22,7 +22,7 @@ public class BoxItemController {
     }
 
     @PostMapping("/{boxNumber}")
-    public BoxItem update(@PathVariable int boxNumber, @RequestBody BoxItem item) {
+    public BoxItem update(@PathVariable("boxNumber") int boxNumber, @RequestBody BoxItem item) {
         BoxItem updated = service.update(boxNumber, item);
 
         // 알람이 켜진 상태가 아닌 경우에만 일반 LED 제어
@@ -34,7 +34,7 @@ public class BoxItemController {
     }
 
     @PostMapping("/{boxNumber}/clear-alarm")
-    public void clearAlarm(@PathVariable int boxNumber) {
+    public void clearAlarm(@PathVariable("boxNumber") int boxNumber) {
         BoxItem item = service.clearAlarm(boxNumber);
         alarmPushService.clearAlarm(item);
     }
