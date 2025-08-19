@@ -23,7 +23,7 @@ public class BoxItem {
     private boolean stored;
     private LocalDateTime reservedTime;
     private boolean alarmOn;
-    @Column(columnDefinition = "TEXT") // base64 문자열은 길 수 있으므로 TEXT로
+    @Column(columnDefinition = "LONGTEXT")  // Base64 문자열은 수천~수만 자가 될 수 있음
     private String photoUrl;
 
 }
